@@ -28,26 +28,7 @@ def esMultiplo02(numero, multiplo):
   else:
       return False
 
-
 def eliminarMultiplos(self):
-    i = 0
-    while(listaN[i]*listaN[i] <= Nlista):
-        # Mientras el cuadrado del elemento actual sea menor que el ultimo elemento
-        for num in listaN:
-            if num <= listaN[i]:
-                # Cada iteracion del while hace que el for comience desde el primer elemento. 
-                # Esto es para omitir los numeros primos ya encontrados
-                continue
-            elif num % listaN[i] == 0:
-                # Si un numero es divisible entre el elemento actual del while
-                # de ser asi, entonces eliminarlo de la lista (esto altera la lista)
-                listaN.remove(num)
-            else:
-                # Si no es divisible, entonces omitirlo (no hacer nada)
-                pass
-        i += 1 # Incrementa al siguiente elemento de la lista (que ha sido alterada)
-
-def eliminarMultiplos1(self):
     p=0
     while(listaN[p]*listaN[p] <= Nlista):
         for num in listaN:
@@ -58,14 +39,16 @@ def eliminarMultiplos1(self):
                     listaN.remove(num)
                 else:
                     pass
-        p += 1 
+        p += 1
+    return listaN 
 
-#print(listaN)
-#print(list(map(eliminarMultiplos,listaN)))
 
-Resultado  =   map(eliminarMultiplos1,listaN)  
+
+Resultado  =   map(eliminarMultiplos,listaN)  
 print(list(Resultado)) 
+print()
+result = filter(eliminarMultiplos, listaN)
+print(list(result))
 
-#result = filter(, listaN)
-#print(list(result))
+
 
